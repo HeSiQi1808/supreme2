@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Supreme login</title>
+	</head>
+	<style type="text/css">
+	p,ul,ol,li,dl,dt,dd,form,table,tr,td,hr,h1,h2,h3,h4,h5,h6,figure,fieldset,legend,input{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	body{
+		width:100%;
+		height: 100%;
+		overflow-x: hidden;
+		font-family: "Courier New", Courier, Monaco ;
+		font-size: 14px;
+		color: white;
+		background-image: url(img/bgimg.gif);
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-size: 10px;
+		font-family: "Courier New", Courier, Monaco ;
+		color: white;
+		display: inline-block;
+	}
+	.login{
+		width: 100%;
+		height: 90%;
+		position: relative;
+	}
+	.login .logoAndTime{
+		padding: 25px;
+		margin: 0 auto;
+		width: 217px;
+		height: 55px;
+		font-family: "Courier New", Courier, Monaco;
+	    padding-bottom: 60px;
+	}
+	.time{
+		font-size:10px;
+	   	margin-left: -25px;
+    	margin-top: 10px;
+	}
+	.zhuce{
+		width: 500px;
+		height: 500px;
+		margin: 0 auto;
+		font-size: 20px;
+		border: 1px solid gray;
+		position: relative;
+	}
+	.zhuce #zhuce1{
+		position: absolute;
+		width: 450px;
+		height: 450px;
+		top: 100px;
+		left: 100px;
+	}
+	#zhuce1 p{
+		height: 130px;
+	}
+	#zhuce1 #zhuBtn{
+		margin-left:90px ;
+		margin-top: 30px;
+		width: 110px;
+		height: 40px;
+		border-radius: 5px;
+		background-color: red;
+		color: white;
+		font-weight: 900;
+		border: 1px solid gray;
+	}
+	#zhuce1 input{
+		width: 250px;
+		height: 30px;
+	}
+	#title{
+		font-size: 12px;
+		font-weight: 100;
+		height: 14px;
+		color: gray;
+	}
+	.footer{
+		padding-top:50px;
+		padding-left:140px;
+		display: flex;
+		width: 682px;
+		height: 14px;
+		line-height: 14px;
+		margin: 0 auto;
+		/*position: relative;*/
+	}
+	.footer a{
+		margin-right: 15px;
+	}
+	#chuAndCang{
+		/*display: block;*/
+		width: 188px;
+		height: 40px;
+		position: relative;
+	}
+	#cangA{
+		display:none;
+		position: absolute;
+		top:25px;
+		left: 0px;
+		width: 181px;
+	}
+	</style>
+	<body>
+		<div class="login">
+			<!--时间获取-->
+			<div class="logoAndTime">
+				<a href="index.html"><img src="img/logo-supreme.png"/></a>
+				<div class="time"><span id="timeOn"></span> &nbsp;beijing</div>
+			</div>
+			<div class="zhuce">
+				<div id="zhuce1">
+					<p>账号：<input type="text" id="phone" placeholder="请输入手机号"/><br />
+						<span id="Yphone"></span><span id="spanError" style="font-size: 14px;color: red;display: none;">您的账号或输入密码有误</span><br />
+						<span id="title">提示：手机号必须是数字，长度不允许超过11位</span>
+					</p>
+					<p>密码：<input type="text" id="pw" placeholder="请输入密码"/><br />
+						<span id="Ypw"></span>
+						<span id="title">提示：密码必须是大写字母开头，长度不允许超过18位</span>
+					</p>
+					<input type="button" value="登录" id="zhuBtn"/>
+				</div>
+			</div>
+			<!--底部连接-->
+			<ul class="footer">
+				<li><a href="index.html" target="_blank">home</a></li>
+				<li><a href="Supreme shop.html">shop</a></li>
+				<li><a href="supremeNews.html">news</a></li>
+				<li id="chuAndCang">
+					<a href="#" id="chuxianA">fall/winter 2018 perview
+						<a href="#" id="cangA">fall/winter 2018 lookbook</a>
+					</a>
+				</li>
+				<li><a href="#">lookbook</a></li>
+				<li><a href="#">random</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">stores</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/regExpTools.js" ></script>
+<script type="text/javascript" src="js/cssTools.js" ></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/dateTools.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/cookieTools.js"></script>	
+<script type="text/javascript">
+	//获取当前时间
+	var getTime = function(){
+		var d = new Date();
+		var str = toDateTimeString(d,"/");
+		document.getElementById("timeOn").innerHTML = str;
+	}
+	function showTime(){
+		setInterval(getTime,0);
+	}
+	window.onload = function(){
+		showTime();
+		
+		ele("#zhuBtn").onclick = function(){
+			//1、实例化对象
+			var xhr = new XMLHttpRequest();
+		
+			//2、设置请求参数
+			xhr.open("post","logincheck.php",true);
+			
+			//3、设置回调函数
+			xhr.onreadystatechange = function(){
+				//5、接收响应
+				if(xhr.readyState==4 && xhr.status==200){
+					if(xhr.responseText=="0"){
+						ele("#spanError").style.display = "block";
+					}else{
+						//保存cookie
+						addCookie("phone",ele("#phone").value,7);
+						location.href = "index.html"
+					}
+				}
+			}
+			
+			//4、发送请求
+			xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			let sendStr = "phone="+ele("#phone").value+"&pw="+ele("#pw").value;
+			xhr.send(sendStr);
+		}
+	}
+	
+//	验证用户输入的信息
+//	$(".zhuce #phone").blur(function(){
+//		1、姓名的规则：只能是汉字 2-10位
+//		var reg =  /^[1][3][0-9]{9}$/;
+//		if(reg.test(this.value)){
+//			$(".zhuce #Yphone").html("该账号可用");
+//			$(".zhuce #Yphone").css({"color":"green","font-weight":900,"font-family":"黑体","font-size":"14px"});
+//		}else{
+//			$(".zhuce #Yphone").html("该账号不可用");
+//			$(".zhuce #Yphone").css({"color":"red","font-weight":900,"font-family":"黑体","font-size":"14px"});
+//		}
+//	})
+//	$(".zhuce #pw").blur(function(){
+//		1、姓名的规则：只能是汉字 2-10位
+//		var reg =  /^[A-Z][\w]{9,18}$/;
+//		if(reg.test(this.value)){
+//			$(".zhuce #Ypw").html("该密码可用");
+//			$(".zhuce #Ypw").css({"color":"green","font-weight":900,"font-family":"黑体","font-size":"14px"});
+//		}else{
+//			$(".zhuce #Ypw").html("该密码不可用");
+//			$(".zhuce #Ypw").css({"color":"red","font-weight":900,"font-family":"黑体","font-size":"14px"});
+//		}
+//	})	
+	
+	//鼠标滑过所有的a变红
+	$(".footer a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".footer a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"white"})
+	})
+	
+	//二、鼠标移上footer的a标签，出现底下的a标签 鼠标移出底下的a标签消失
+	$("#chuAndCang #chuxianA").on("mouseover",function(){
+		$("#cangA").css({"display":"block"})
+	})
+	$("#chuAndCang").on("mouseleave",function(){
+		$("#cangA").css({"display":"none"})
+	})
+	
+</script>

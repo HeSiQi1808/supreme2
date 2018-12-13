@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Supreme shop</title>
+	</head>
+	<style type="text/css">
+	p,ul,ol,li,dl,dt,dd,form,table,tr,td,hr,h1,h2,h3,h4,h5,h6,figure,fieldset,legend,input{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	body{
+		width:100%;
+		height: 100%;
+		overflow-x: hidden;
+		font-family: "Courier New", Courier, Monaco ;
+		font-size: 12px;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-size: 10px;
+		font-family: "Courier New", Courier, Monaco ;
+		color: black;
+		display: inline-block;
+	}
+	.bigBox{
+		width: 100%;
+		height: 90%;
+		position: relative;
+	}
+	.bigBox .logoAndTime{
+		padding: 25px;
+		margin: 0 auto;
+		width: 217px;
+		height: 55px;
+		font-family: "Courier New", Courier, Monaco;
+	    padding-bottom: 60px;
+	}
+	.time{
+		font-size:10px;
+	   	margin-left: -15px;
+    	margin-top: 10px;
+	}
+	.logoAndTime a img{
+		width: 160px;
+		height: 50px;
+	}
+	.shopAll{
+		width: 720px;
+		height: 375px;
+		margin: 15px auto;
+		position: relative;
+		overflow-x:scroll;
+		overflow-y: hidden;
+	}
+	.shopAll .shopping{
+		width: 720px;
+		height: 375px;
+		white-space: nowrap;
+		display: flex;
+	}
+	.shopAll .shopping li{
+		width: 49px;
+		height: 360px;
+		position: relative;
+		padding-right:2px ;
+	}
+	.shopAll .shopping a{
+		width: 49px;
+		height: 360px;
+		border: none;
+		border: 0;
+		padding-right:2px ;
+	}
+	.shopAll .shopping a img{
+		width: 49px;
+		height: 360px;
+		border: none;
+		border: 0;
+		display: block;
+		float: left;
+	}
+	/*.scroll{
+		position: absolute;
+		bottom:0px;
+		left: 0px;
+		width: 718px;
+		height: 15px;
+		border: 1px solid red;
+		background-color: pink;
+	}
+	.scroll .scrollmin{
+		width:275px ;	
+		height: 15px;
+		border:1px solid blue;
+		border-radius: 5px;
+		background-color: lightgray;
+	}*/
+	.footerBox{
+		width: 100%;
+		height: 10%;
+		position: relative;
+	}
+	.footerBox .footer{
+		position: absolute;
+		left: 270px;
+		bottom: -80px;
+		display: flex;
+		width: 682px;
+		height: 14px;
+		line-height: 14px;
+	}
+	.footer a{
+		margin-right: 15px;
+	}
+	#chuAndCang{
+		width: 188px;
+		height: 40px;
+		position: relative;
+	}
+	#cangA{
+		display:none;
+		position: absolute;
+		top:20px;
+		left: 0px;
+		width: 181px;
+	}
+	#new{
+		background-color: darkgray;
+		color: white;
+		text-align: center;
+		width: 31px;
+		height: 16px;
+		position: absolute;
+		top: 0;
+		right: 5px;
+	}
+	</style>
+	<body>
+		<div class="bigBox">
+			<!--logo和时间-->
+			<div class="logoAndTime">
+				<a href="index.html"><img src="img/logo-supreme.png"/></a>
+				<div class="time"><span id="timeOn"></span> &nbsp;beijing</div>
+			</div>
+			
+			<!--所有商品列表-->
+			<div class="shopAll">
+				<ul class="shopping">
+					<li><a href="#"><img src="img/shop1.png"/></a><span id="new">new</span></li>
+					<li><a href="Supreme shopping.html"><img src="img/shop2.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop3.png"/></a></li>
+					<li><a href="#"><img src="img/shop4.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop5.png"/></a></li>
+					<li><a href="#"><img src="img/shop6.png"/></a></li>
+					<li><a href="#"><img src="img/shop7.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop8.png"/></a></li>
+					<li><a href="#"><img src="img/shop9.png"/></a></li>
+					<li><a href="#"><img src="img/shop10.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop11.png"/></a></li>
+					<li><a href="#"><img src="img/shop12.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop13.png"/></a></li>
+					<li><a href="#"><img src="img/shop14.png"/></a></li>
+					<li><a href="#"><img src="img/shop15.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop16.png"/></a></li>
+					<li><a href="#"><img src="img/shop17.png"/></a></li>
+					<li><a href="#"><img src="img/shop18.png"/></a></li>
+					<li><a href="#"><img src="img/shop19.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop10.png"/></a></li>
+					<li><a href="#"><img src="img/shop21.png"/></a></li>
+					<li><a href="#"><img src="img/shop22.png"/></a></li>
+					<li><a href="#"><img src="img/shop23.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop24.png"/></a></li>
+					<li><a href="#"><img src="img/shop25.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop26.png"/></a></li>
+					<li><a href="#"><img src="img/shop27.png"/></a></li>
+					<li><a href="#"><img src="img/shop28.png"/></a><span id="new">new</span></li>
+					<li><a href="#"><img src="img/shop29.png"/></a></li>
+					<li><a href="#"><img src="img/shop30.png"/></a></li>
+				</ul>
+				<!--滚动条-->
+				<!--<div class="scroll">
+					<div class="scrollmin">
+					</div>
+				</div>-->
+			</div>
+			<!--底部连接-->
+			<div class="footerBox">
+				<ul class="footer">
+					<li><a href="index.html" target="_blank">home</a></li>
+					<li><a href="#">shop</a></li>
+					<li><a href="supremeNews.html">news</a></li>
+					<li id="chuAndCang">
+						<a href="#" id="chuxianA">fall/winter 2018 perview
+							<a href="#" id="cangA">fall/winter 2018 lookbook</a>
+						</a>
+					</li>
+					<li><a href="#">lookbook</a></li>
+					<li><a href="#">random</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">stores</a></li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/regExpTools.js" ></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/dateTools.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	//获取当前时间
+	var getTime = function(){
+		var d = new Date();
+		var str = toDateTimeString(d,"/");
+		document.getElementById("timeOn").innerHTML = str;
+	}
+	function showTime(){
+		setInterval(getTime,0);
+	}
+	window.onload = function(){
+		showTime();
+	}
+	
+	//鼠标滑过所有的a变红色
+	$(".footer a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".footer a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	//二、鼠标移上footer的a标签，出现底下的a标签 鼠标移出底下的a标签消失
+	$("#chuAndCang #chuxianA").on("mouseover",function(){
+		$("#cangA").css({"display":"block"})
+	})
+	$("#chuAndCang").on("mouseleave",function(){
+		$("#cangA").css({"display":"none"})
+	})
+</script>

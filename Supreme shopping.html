@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Supreme shopping</title>
+	</head>
+	<style type="text/css">
+	p,ul,ol,li,dl,dt,dd,form,table,tr,td,hr,h1,h2,h3,h4,h5,h6,figure,fieldset,legend,input{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	body{
+		width:100%;
+		height: 100%;
+		overflow-x: hidden;
+		font-family: "Courier New", Courier, Monaco ;
+		font-size: 14px;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-size: 10px;
+		font-family: "Courier New", Courier, Monaco ;
+		color: black;
+		display: inline-block;
+	}
+	.bigBox{
+		width: 100%;
+		height: 90%;
+		position: relative;
+	}
+	.bigBox .logoAndTime{
+		padding: 25px;
+		margin: 0 auto;
+		width: 217px;
+		height: 55px;
+		font-family: "Courier New", Courier, Monaco;
+	    padding-bottom: 60px;
+	}
+	.time{
+		font-size:10px;
+	   	margin-left: -15px;
+    	margin-top: 10px;
+	}
+	.shopping{
+		width: 974px;
+		height: 578px;
+		margin: 0 auto;
+		padding-left:278px ;
+		display: flex;
+		position: relative;
+	}
+	.shopping .shopText .shopImgMin{
+		display: flex;
+	}
+	.shopping .shopText .shopImgMin li{
+		width: 38px;
+		height: 38px;
+		margin:5px 5px 0 0;
+		display: block;
+		/*border: 0px solid black;*/
+		border: none;
+	}
+	.shopping .shopText .shopImgMin li a{
+		width: 38px;
+		height: 38px;
+	}
+	.shopping .shopText .shopImgMin li img{
+		 padding: 3px;
+	}
+	.shopping .shopText .shopImgMin1{
+		display: flex;
+	}
+	.shopping .shopText .shopImgMin1 li{
+		width: 38px;
+		height: 38px;
+		margin:5px 5px 0 0;
+		display: block;
+		/*border: 0px solid black;*/
+		border: none;
+	}
+	.shopping .shopText .shopImgMin1 li a{
+		width: 38px;
+		height: 38px;
+	}
+	.shopping .shopText .shopImgMin1 li img{
+		 padding: 3px;
+	}
+	.shopping .shopImg{
+		width: 450px;
+		height: 450px;
+		margin-right: -350px;
+		position: relative;
+		cursor: zoom-in;
+		background-image: url(img/shop-1.png);
+	}
+	.shopping .shopImg #mirrorBox{
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		width: 150px;
+		height: 150px;
+		background-color:lightgray;
+		opacity: .25;
+		display: none;
+	}
+	/*.shopping .shopImg{
+		cursor: zoom-in;
+		background-image: url(img/shop-1.png);
+	}*/
+	.shopping .shopText{
+		width: 362px;
+		height: 578px;
+		position: relative;
+		margin-left: 375px;
+	}
+	#money{
+		font-size: 18px;
+	}
+	#nextShop{
+		font-size: 12px;
+		font-weight: 900;
+		margin-left: 120px;
+		margin-bottom:14px;
+	}
+	.shopping .shopText input{
+		width: 100px;
+		height:26px;
+		text-align: center;
+		border:1px solid darkgray ;
+		color:gray;
+		background-color: white;
+	}
+	.shopping .shopText input:last-child{
+		color:white;
+		font-weight: 900;
+		background-color: #403b39;
+		border:none;
+	}
+	.shopping .footer{
+		position: absolute;
+		bottom: -30px;
+		display: flex;
+		width: 682px;
+		height: 14px;
+		line-height: 14px;
+		margin: 0 auto;
+	}
+	.footer a{
+		margin-right: 15px;
+	}
+	#chuAndCang{
+		width: 188px;
+		height: 40px;
+		position: relative;
+	}
+	#cangA{
+		display:none;
+		position: absolute;
+		top:20px;
+		left: 0px;
+		width: 181px;
+	}
+	#new{
+		background-color: darkgray;
+		color: white;
+		text-align: center;
+		width: 31px;
+		height: 16px;
+		position: absolute;
+		top: 0;
+		right: 5px;
+	}
+	.maxImg{
+		position:absolute;
+		top: 0;
+		right: -470px;
+		width: 452px;
+		height: 452px;
+		border: 1px solid black;
+		overflow: hidden;
+		background-image: url(img/shop-1max.png);
+		display: none;
+		background-size: 1350px 1350px;
+	}
+	#backBtn{
+		cursor: pointer;
+	}
+	#buyBtn{
+		cursor: pointer;
+	}
+	</style>
+	<body>
+		<div class="bigBox">
+			<!--logo和时间-->
+			<div class="logoAndTime">
+				<a href="index.html"><img src="img/logo-supreme.png"/></a>
+				<div class="time"><span id="timeOn"></span> &nbsp;beijing</div>
+			</div>
+			<!--商品详情-->
+			<div class="shopping">
+				<!--左边的图片-->
+				<div class="shopImg" id="shopImg">
+					<div id="mirrorBox"></div>
+					<div class="maxImg" id="maxImg"></div>
+				</div>
+				<!--右边的内容-->
+				<div class="shopText">
+					<h4 style="font-weight: 100;">Jesus and Mary Hooded Sweatshirt</h4>
+					<p style="margin-bottom: 14px;"><b>Dark Grey</b></p>
+					<p style="font-size: 12px; margin-bottom: 14px;">Cotton fleece with pouch pocket, printed<br /> pattern and printed logo on back. </p>
+					<ul class="shopImgMin">
+						<li><a href="#" id="shop-1min"><img src="img/shop-1min.png"/></a></li>
+						<li><a href="#" id="shop-2min"><img src="img/shop-2min.png"/></a></li>
+						<li><a href="#" id="shop-3min"><img src="img/shop-3min.png"/></a></li>
+					</ul>
+					<ul class="shopImgMin1" style="margin-bottom: 14px;">
+						<li><a href="#" id="shop-1min"><img src="img/shop-1min.png"/></a></li>
+						<li><a href="#" id="shop-2min"><img src="img/shop-2min.png"/></a></li>
+						<li><a href="#" id="shop-3min"><img src="img/shop-3min.png"/></a></li>
+					</ul>
+					<p id="money">¥31,320</p>
+					<a href="#" id="nextShop">next sweatshirt ></a><br />
+					<input type="button" name="" id="backBtn" value="sold out" />
+					<a href="shopping car.html"><input type="button" name="" id="buyBtn" value="buy" /></a>
+				</div>
+				<!--底部连接-->
+				<ul class="footer">
+					<li><a href="index.html" target="_blank">home</a></li>
+					<li><a href="#">shop</a></li>
+					<li><a href="supremeNews.html">news</a></li>
+					<li id="chuAndCang">
+						<a href="#" id="chuxianA">fall/winter 2018 perview
+							<a href="#" id="cangA">fall/winter 2018 lookbook</a>
+						</a>
+					</li>
+					<li><a href="#">lookbook</a></li>
+					<li><a href="#">random</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">stores</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/regExpTools.js" ></script>
+<script type="text/javascript" src="js/cssTools.js" ></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/dateTools.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	//获取当前时间
+	var getTime = function(){
+		var d = new Date();
+		var str = toDateTimeString(d,"/");
+		document.getElementById("timeOn").innerHTML = str;
+	}
+	function showTime(){
+		setInterval(getTime,0);
+	}
+	window.onload = function(){
+		showTime();
+		initUI();
+	}
+	
+	//鼠标滑过所有的a变红色
+	$("#nextShop").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$("#nextShop").on("mouseleave",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	$(".footer a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".footer a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	//二、鼠标移上footer的a标签，出现底下的a标签 鼠标移出底下的a标签消失
+	$("#chuAndCang #chuxianA").on("mouseover",function(){
+		$("#cangA").css({"display":"block"})
+	})
+	$("#chuAndCang").on("mouseleave",function(){
+		$("#cangA").css({"display":"none"})
+	})
+	
+	//点击小图片显示对应大图片
+//	$(".shopImgMin li").on("click",function(){
+//		$(this).css({"border":"1px solid gray"})
+//	})
+//	$(".shopImgMin1 li").on("click",function(){
+//		$(this).css({"border":"1px solid gray"})
+//	})
+	
+	//放大镜效果
+	//放大镜右边大图出现右边内容隐藏
+	$(".shopping .shopImg").on("click",function(){
+		$(".shopping .shopText").css({"display":"none"})
+		$(".shopping .maxImg").css({"display":"block"})
+		$("#mirrorBox").css({"display":"block"})
+	})
+	//放大镜右边大图消失右边内容出现
+	$(".shopping .shopImg").on("mouseout",function(){
+		$(".shopping .shopText").css({"display":"block"})
+		$(".shopping .maxImg").css({"display":"none"})
+		$("#mirrorBox").css({"display":"none"})
+	})
+	
+//	window.onload = function(){
+	var n = 3;
+
+	function initUI(){
+		ele("#maxImg").style.width =  parseFloat(getStyle(ele("#mirrorBox"),"width"))*n+"px";
+		ele("#maxImg").style.height = parseFloat(getStyle(ele("#mirrorBox"),"height"))*n+"px";
+		ele("#maxImg").style.backgroundSize = ele("#shopImg").offsetWidth*n +"px "+ele("#shopImg").offsetHeight*n+"px";
+	}
+	ele("#shopImg").onmousemove = function(event){
+		let evt = event || window.event;
+		//1、数据
+		let mirrorWidth = ele("#mirrorBox").offsetWidth;
+		let mirrorHeight = ele("#mirrorBox").offsetHeight;
+		let left1 = evt.pageX-this.offsetLeft-mirrorWidth/2;
+//		console.log(this);
+		let top1 = evt.pageY-this.offsetTop-mirrorHeight/2;
+		
+		//2、边界
+		if(left1<0){
+			left1=0;
+		}
+		if(left1>this.offsetWidth-mirrorWidth){
+			left1=this.offsetWidth-mirrorWidth
+		}
+		
+		if(top1<0){
+			top1=0;
+		}
+		if(top1>this.offsetHeight-mirrorHeight){
+			top1=this.offsetHeight-mirrorHeight
+		}
+		//3、改变外观
+		ele("#mirrorBox").style.left = left1+"px";
+		ele("#mirrorBox").style.top = top1+"px";
+		ele("#maxImg").style.backgroundPosition = (-n*left1)+"px "+(-n*top1)+"px";
+	}
+//}
+//点击小图切换左边背景图和右边大图  并且切换每个a的边框
+
+	//第一个ul
+	$(".shopImgMin #shop-1min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-1.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-1max.png)"})
+		$(".shopImgMin #shop-1min").css({"border":"1px solid gray"})
+		$(".shopImgMin #shop-2min").css({"border":"none"})
+		$(".shopImgMin #shop-3min").css({"border":"none"})
+		$(".shopImgMin1 #shop-1min").css({"border":"none"})
+		$(".shopImgMin1 #shop-2min").css({"border":"none"})
+		$(".shopImgMin1 #shop-3min").css({"border":"none"})
+	})
+	$(".shopImgMin #shop-2min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-2.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-2max.png)"})
+		$(".shopImgMin #shop-2min").css({"border":"1px solid gray"})
+		$(".shopImgMin #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-3min").css({"border":"none"})
+		$(".shopImgMin1 #shop-1min").css({"border":"none"})
+		$(".shopImgMin1 #shop-2min").css({"border":"none"})
+		$(".shopImgMin1 #shop-3min").css({"border":"none"})
+	})
+	$(".shopImgMin #shop-3min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-3.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-3max.png)"})
+		$(".shopImgMin #shop-3min").css({"border":"1px solid gray"})
+		$(".shopImgMin #shop-2min").css({"border":"none"})
+		$(".shopImgMin #shop-1min").css({"border":"none"})
+		$(".shopImgMin1 #shop-1min").css({"border":"none"})
+		$(".shopImgMin1 #shop-2min").css({"border":"none"})
+		$(".shopImgMin1 #shop-3min").css({"border":"none"})
+	})
+	
+	
+	//第二个ul
+	$(".shopImgMin1 #shop-1min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-1.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-1max.png)"})
+		$(".shopImgMin1 #shop-1min").css({"border":"1px solid gray"})
+		$(".shopImgMin1 #shop-2min").css({"border":"none"})
+		$(".shopImgMin1 #shop-3min").css({"border":"none"})
+		$(".shopImgMin #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-2min").css({"border":"none"})
+		$(".shopImgMin #shop-3min").css({"border":"none"})
+	})
+	$(".shopImgMin1 #shop-2min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-2.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-2max.png)"})
+		$(".shopImgMin1 #shop-2min").css({"border":"1px solid gray"})
+		$(".shopImgMin1 #shop-3min").css({"border":"none"})
+		$(".shopImgMin1 #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-2min").css({"border":"none"})
+		$(".shopImgMin #shop-3min").css({"border":"none"})
+	})
+	$(".shopImgMin1 #shop-3min").on("click",function(){
+		$(".shopping #shopImg").css({"background-image":"url(img/shop-3.png)"})
+		$(".shopping #shopImg #maxImg").css({"background-image":"url(img/shop-3max.png)"})
+		$(".shopImgMin1 #shop-3min").css({"border":"1px solid gray"})
+		$(".shopImgMin1 #shop-2min").css({"border":"none"})
+		$(".shopImgMin1 #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-1min").css({"border":"none"})
+		$(".shopImgMin #shop-2min").css({"border":"none"})
+		$(".shopImgMin #shop-3min").css({"border":"none"})
+	})
+</script>

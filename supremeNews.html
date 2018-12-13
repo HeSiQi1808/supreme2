@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>supremeNews</title>
+	<style type="text/css">
+	p,ul,ol,li,dl,dt,dd,form,table,tr,td,hr,h1,h2,h3,h4,h5,h6,figure,fieldset,legend,input{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		/*width: 100%;*/
+		height: 100%;
+		display: block;
+	}
+	body{
+		width:100%;
+		height: 100%;
+		overflow-x: hidden;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-size: 10px;
+		font-family: "Courier New", Courier, Monaco ;
+		color: black;
+		display: inline-block;
+	}
+	.newsBox{
+		width: 100%;
+		height: 90%;
+		position: relative;
+	}
+	.newsBox .logoAndTime{
+		padding: 25px;
+		margin: 0 auto;
+		width: 217px;
+		height: 55px;
+		font-family: "Courier New", Courier, Monaco;
+	}
+	.time{
+		font-size:10px;
+	   	margin-left: -15px;
+    	margin-top: 10px;
+	}
+	.logoAndTime a img{
+		width: 160px;
+		height: 50px;
+	}
+	.contentAll{
+		display: flex;
+		width: 670px;
+		height: 365px;
+	    margin: 0 auto;
+	    padding-top: 100px;
+		font-family: "Courier New", Courier, Monaco;
+		position:relative;
+	}
+	.contentAll .contentImg{
+		width: 398px;
+	    text-align: center;
+	    padding-right: 5px;
+	    position: relative;
+	}
+	.contentImg #clothImg img{
+		position: absolute;
+		top: -100px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		opacity: 0;
+	}
+	.contentImg #clothImg img:first-child{
+		z-index:1;
+		opacity:1;
+	}
+	.contentAll .contentText span{
+		display: block;
+    	height: 255px;
+    	margin-top: 5px;
+	}
+	.contentAll .contentImg .changeImg{
+		font-size: 12px;
+		margin-top: 45px;
+		position: absolute;
+		left: 145px;
+		top: 280px;
+	}
+	.contentAll .contentImg .changeImg img{
+		cursor: pointer;
+	}
+	.contentAll .contentText{
+		width: 272px;
+	}
+	.contentAll .contentText .newsDate{
+		font-size: 10px;
+	}
+	#spanText{
+		font-size: 10px;
+		overflow: auto;
+	}
+	.contentText a{
+	    margin-top: 30px;
+    	display: inline-block;
+	}
+	.footer{
+		padding-top:70px;
+		padding-left:20px;
+		display: flex;
+		width: 682px;
+		height: 14px;
+		line-height: 14px;
+		margin: 0 auto;
+		/*position: relative;*/
+	}
+	.footer a{
+		margin-right: 15px;
+	}
+	#chuAndCang{
+		/*display: block;*/
+		width: 188px;
+		height: 40px;
+		position: relative;
+	}
+	#cangA{
+		display:none;
+		position: absolute;
+		top:25px;
+		left: 0px;
+		width: 181px;
+	}
+	</style>
+</head>
+<body>
+	<!--头部-->
+	<header class="newsBox">
+		<div class="logoAndTime">
+			<a href="index.html"><img src="img/logo-supreme.png"/></a>
+			<div class="time"><span id="timeOn"></span> &nbsp;beijing</div>
+		</div>
+	<!--内容-->
+			<!--内容的具体-->
+		<div class="contentAll">
+			<div class="contentImg">
+				<a id="clothImg" href="#">
+					<img src="img/cloth1.jpg"/>
+					<img src="img/cloth2.jpg"/>
+					<img src="img/cloth3.jpg"/>
+					<img src="img/cloth4.jpg"/>
+					<img src="img/cloth5.jpg"/>
+					<img src="img/cloth6.jpg"/>
+					<img src="img/cloth7.jpg"/>
+					<img src="img/cloth8.jpg"/>
+					<img src="img/cloth9.jpg"/>
+					<img src="img/cloth10.jpg"/>
+				</a>
+				<div class="changeImg">
+					<img src="img/jtl.jpg" id="jian"/>&nbsp;
+					<span id="clothNum">1</span> of <span>10</span>&nbsp;
+					<img src="img/jtr.jpg" id="jia"/>
+				</div>
+			</div>
+			<div class="contentText">
+				<p class="newsDateAndName">
+					<p class="newsDate">11/26/2018</p>
+					<p class="newsName">Supreme&reg;/The North Face&reg;</p>
+				</p>
+				<span id="spanText">
+					"Supreme has worked with The North Face® on a new collection 
+					for Fall 2018. The collection consists of an Expedition Jacket, 
+					Expedition Fleece Jacket, Expedition Pant, Hooded Sweatshirt, 
+					T-Shirt, Expedition Backpack, Expedition Waist Bag, Expedition 
+					Travel Wallet, Beanie and Compass Necklace." <br /><br />
+					"Made exclusively for Supreme, the Expedition Jacket and Pant feature 
+					waterproof, breathable GORE-TEX Cordura® ripstop nylon with fully
+					sealed seams. The Expedition Backpack, Waist Bag and Travel Wallet 
+					feature durable nylon with Cordura® yarn. "<br /><br />
+					"Available in-store NY, Brooklyn, LA, London, Paris and online November 29th."
+					<br /><br />
+					"Available in Japan on December 1st."
+				</span>
+				<a href="#">archive</a>
+			</div>
+		</div>
+	<!--底部连接-->
+		<ul class="footer">
+			<li><a href="supreme.html" target="_blank">home</a></li>
+			<li><a href="Supreme shop.html">shop</a></li>
+			<li><a href="supremeNews.html">news</a></li>
+			<li id="chuAndCang">
+				<a href="#" id="chuxianA">fall/winter 2018 perview
+					<a href="#" id="cangA">fall/winter 2018 lookbook</a>
+				</a>
+			</li>
+			<li><a href="#">lookbook</a></li>
+			<li><a href="#">random</a></li>
+			<li><a href="#">about</a></li>
+			<li><a href="#">stores</a></li>
+		</ul>
+	</header>
+</body>
+</html>
+<script type="text/javascript" src="js/dateTools.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	//获取当前时间
+	var getTime = function(){
+		var d = new Date();
+		var str = toDateTimeString(d,"/");
+		document.getElementById("timeOn").innerHTML = str;
+	}
+	function showTime(){
+		setInterval(getTime,0);
+	}
+	window.onload = function(){
+		showTime();
+	}
+	
+	//鼠标滑过所有的a变红色
+	$(".contentAll .contentText a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".contentAll .contentText a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	$(".footer a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".footer a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	
+	//一、获取切换图片的加减号以及span内的数字
+	//1、鼠标移上箭头放大，鼠标移出箭头缩小
+	$("#jian").on("mouseover",function(){
+		$(this).css({"transform":"scale(1.6)"})
+	})
+	$("#jian").on("mouseout",function(){
+		$(this).css({"transform":"scale(1)"})
+	})
+	$("#jia").on("mouseover",function(){
+		$(this).css({"transform":"scale(1.6)"})
+	})
+	$("#jia").on("mouseout",function(){
+		$(this).css({"transform":"scale(1)"})
+	})
+	//2、鼠标点击箭头放大，点击空白处箭头缩小
+	//2.1、减
+//	$("#jian").on("click",function(){
+//		$(this).css({"transform":"scale(1.6)"})
+//		$("#jian").on("mouseout",function(){
+//			$(this).css({"transform":"scale(1.6)"})
+//		})
+//	})
+//	$("header").on("click",function(){
+//		$(this).css({"transform":"scale(1)"})
+//	})
+	
+	//2.2、加
+	var num =1;
+	$("#jia").on("click",function(){
+		$(this).css({"transform":"scale(1.6)"})
+		num = num+1;
+		if(num>=10){
+			num=10;
+		}
+//		$("<img src='img/cloth.jpg'>").replaceAll("#clothImg img")
+		document.getElementById("clothNum").innerHTML = num;
+//		$("<img src='img/cloth.jpg'>").replaceAll("#clothImg img")
+	})
+	
+	//2.3、减
+	var num =1;
+	$("#jian").on("click",function(){
+		$(this).css({"transform":"scale(1.6)"})
+		num = num-1;
+		if(num<=1){
+			num=1;
+		}
+//		 $($("#clothImg").eq(num)).css({"opacity":"1","z-index":"5"})
+//		$("<img src='img/cloth.jpg'>").replaceAll("#clothImg img")
+		document.getElementById("clothNum").innerHTML = num;
+//		$("<img src='img/cloth.jpg'>").replaceAll("#clothImg img")
+		
+	})
+	//二、鼠标移上footer的a标签，出现底下的a标签 鼠标移出底下的a标签消失
+	$("#chuAndCang #chuxianA").on("mouseover",function(){
+		$("#cangA").css({"display":"block"})
+	})
+	$("#chuAndCang").on("mouseleave",function(){
+		$("#cangA").css({"display":"none"})
+	})
+	
+	
+//	图片切换
+	
+	
+</script>

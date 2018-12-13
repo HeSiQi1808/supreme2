@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Supreme contact</title>
+	<style type="text/css">
+	p,ul,ol,li,dl,dt,dd,form,table,tr,td,hr,h1,h2,h3,h4,h5,h6,figure,fieldset,legend,input{
+		margin:0;
+		padding: 0;
+	}
+	html{
+		/*width: 100%;*/
+		height: 100%;
+		display: block;
+	}
+	body{
+		width:100%;
+		height: 100%;
+		overflow-x: hidden;
+		font-family: "Courier New", Courier, Monaco ;
+		font-size: 12px;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		font-size: 10px;
+		font-family: "Courier New", Courier, Monaco ;
+		color: black;
+		display: inline-block;
+	}
+	.bigBox{
+		width: 100%;
+		height: 90%;
+		position: relative;
+	}
+	.bigBox .logoAndTime{
+		padding: 25px;
+		margin: 0 auto;
+		width: 217px;
+		height: 55px;
+		font-family: "Courier New", Courier, Monaco;
+	    padding-bottom: 60px;
+	}
+	.time{
+		font-size:10px;
+	   	margin-left: -15px;
+    	margin-top: 10px;
+	}
+	.logoAndTime a img{
+		width: 160px;
+		height: 50px;
+	}
+	.register{
+		width: 726px;
+		height: 512px;
+		margin: 0 auto;
+		display: flex;
+		position: relative;
+	}
+	.register .text{
+		width: 375px;
+		height: 512px;
+		margin-right: 10px;
+		position: relative;
+		display: flex;
+	}
+	.register .text p:first-child{
+		position: absolute;
+		top: 100px;
+		right: 30px;
+	}
+	.register .text .textTwo{
+		position: absolute;
+		bottom: 80px;
+		left: 0px;
+	}
+	.register .yanzheng{
+		width: 318px;
+		height: 512px;
+		margin-top:100px ;
+	}
+	.yanzheng input{
+		width: 121px;
+		height: 24px;
+		border-radius:3px;
+		border:gainsboro 1px solid;
+		font-family:'Courier New', Courier, Monaco ;
+		margin-bottom:10px ;
+		margin-right:10px;
+	}
+	.yanzheng select{
+		width:121px;
+		height: 26px;
+		border-radius:3px;
+		margin-bottom:10px ;
+		border:gainsboro 1px solid;
+	}
+	.yanzheng textarea{
+		width: 250px;
+		height: 158px;
+		border: gainsboro 1px solid;
+		overflow: auto;
+		resize: none;
+	}
+	.yanzheng input:last-child{
+		width: 45px;
+		height:27px;
+		background-color: red;
+		color: white;
+		border-radius: 0px;
+		cursor: pointer;
+	}
+	#splay{
+		display: inline-block;
+		color: red;
+	}
+	.register .footer{
+		position: absolute;
+		bottom: -20px;
+		display: flex;
+		width: 682px;
+		height: 14px;
+		line-height: 14px;
+		margin: 0 auto;
+	}
+	.footer a{
+		margin-right: 15px;
+	}
+	#chuAndCang{
+		width: 188px;
+		height: 40px;
+		position: relative;
+	}
+	#cangA{
+		display:none;
+		position: absolute;
+		top:20px;
+		left: 0px;
+		width: 181px;
+	}
+	</style>
+	</head>
+	<body>
+		<div class="bigBox">
+			<!--logo和时间-->
+			<div class="logoAndTime">
+				<a href="index.html"><img src="img/logo-supreme.png"/></a>
+				<div class="time"><span id="timeOn"></span> &nbsp;beijing</div>
+			</div>
+			<!--注册表单验证及提示信息-->
+			<div class="register">
+				<div class="text">
+					<p class="textOne">contact supremenewyork.com</p>
+					<p class="textTwo">website & e-commerce by <a href="#" id="splay"><b>Splay</b></a></p>
+				</div>
+				<div class="yanzheng">
+					<input type="text" placeholder=" first name" id="fname"/><span id="fnameY"></span>
+					<input type="text" placeholder=" last name" id="lname"/><span id="lnameY"></span>
+					<input type="text" placeholder=" your email" id="ename"/><span id="enameY"></span><br />	
+					<select style="font-family:'Courier New', Courier, Monaco ;">
+						<option value="">shop order</option>
+						<option value="">general info</option>
+						<option value="">press/media</option>
+						<option value="">request</option>
+						<option value="">website</option>
+					</select>
+					<p>massage</p>
+					<textarea></textarea><br />
+					<input type="button" name="" id="sendBtn" value="send"/>
+				</div>
+				<ul class="footer">
+					<li><a href="index.html" target="_blank">home</a></li>
+					<li><a href="Supreme shop.html">shop</a></li>
+					<li><a href="supremeNews.html">news</a></li>
+					<li id="chuAndCang">
+						<a href="#" id="chuxianA">fall/winter 2018 perview
+							<a href="#" id="cangA">fall/winter 2018 lookbook</a>
+						</a>
+					</li>
+					<li><a href="#">lookbook</a></li>
+					<li><a href="#">random</a></li>
+					<li><a href="#">about</a></li>
+					<li><a href="#">stores</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/regExpTools.js" ></script>
+<script type="text/javascript" src="js/tools.js"></script>
+<script type="text/javascript" src="js/dateTools.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	//获取当前时间
+	var getTime = function(){
+		var d = new Date();
+		var str = toDateTimeString(d,"/");
+		document.getElementById("timeOn").innerHTML = str;
+	}
+	function showTime(){
+		setInterval(getTime,0);
+	}
+	window.onload = function(){
+		showTime();
+	}
+	
+	$("#splay").on("click mouseover",function(){
+		$(this).css({"background-color":"red","color":"white"})
+	})
+	$("#splay").on("mouseleave",function(){
+		$(this).css({"background-color":"","color":"red"})
+	})
+	
+	//鼠标滑过所有的a变红色
+	$(".footer a").on("click mouseover",function(){
+		$(this).css({"background-color":"#ff0000","color":"white"})
+	})
+	$(".footer a").on("mouseout",function(){
+		$(this).css({"background-color":"","color":"black"})
+	})
+	//二、鼠标移上footer的a标签，出现底下的a标签 鼠标移出底下的a标签消失
+	$("#chuAndCang #chuxianA").on("mouseover",function(){
+		$("#cangA").css({"display":"block"})
+	})
+	$("#chuAndCang").on("mouseleave",function(){
+		$("#cangA").css({"display":"none"})
+	})
+	
+	//表单验证
+	$(".yanzheng #fname").blur(function(){
+		//1、姓名的规则：只能是汉字 2-10位
+		var reg =  /^[\u4e00-\u9fa5]{2,10}$/;
+		if(reg.test(this.value)){
+			$(".yanzheng #fnameY").html("√");
+			$(".yanzheng #fnameY").css({"color":"green","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}else{
+			$(".yanzheng #fnameY").html("X");
+			$(".yanzheng #fnameY").css({"color":"red","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}
+	})
+	
+	$(".yanzheng #lname").blur(function(){
+		//1、姓名的规则：只能是汉字 2-10位
+		var reg =  /^[\u4e00-\u9fa5]{2,10}$/;
+		if(reg.test(this.value)){
+			$(".yanzheng #lnameY").html("√");
+			$(".yanzheng #lnameY").css({"color":"green","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}else{
+			$(".yanzheng #lnameY").html("X");
+			$(".yanzheng #lnameY").css({"color":"red","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}
+	})
+	
+	$(".yanzheng #ename").blur(function(){
+		//1、姓名的规则：只能是汉字 2-10位
+		var reg = /^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.(com|cn|net)$/i;
+		if(reg.test(this.value)){
+			$(".yanzheng #enameY").html("√");
+			$(".yanzheng #enameY").css({"color":"green","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}else{
+			$(".yanzheng #enameY").html("X");
+			$(".yanzheng #enameY").css({"color":"red","font-weight":900,"font-family":"黑体","font-size":"14px"});
+		}
+	})
+</script>
+</script>
